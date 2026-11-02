@@ -1,0 +1,28 @@
+# Move Docker to Another Drive
+- My Drives state is  **C: 52.1 GB free of 134 GB**  & **D: 231 GB free of 340 GB**
+- For Completely exits Docker Desktop ( no background activie also )
+    - Don't simply close by **X** butthon 
+    - Go to ```＾``` in task bar
+    - Right click to Docker Icon
+    - Choose: **Quit Docker Desktop**
+- Open CMD & run:
+    - ```wsl -l```
+        - used to list all installed WSL (Windows Subsystem for Linux) distributions on your Windows machine
+    - ```wsl --shutdown```
+        - used to completely stop all currently running WSL 2 Linux distributions and their virtual machine.
+    - ```wsl --export docker-desktop D:\docker-desktop.tar``` 
+        - used to create a backup/export of the docker-desktop WSL distribution into a TAR archive file
+    - ```wsl --unregister docker-desktop```
+        - used to completely unregister (remove) the docker-desktop WSL distribution from your Windows system.
+    - ```wsl --import docker-desktop D:\Docker\wsl D:\docker-desktop.tar```
+        - used to restore/import a WSL distribution from a previously exported TAR backup.
+        - D:\Docker\wsl  &emsp;&emsp;&emsp;&emsp;&emsp; Directory where the imported Linux filesystem will be stored
+        - D:\docker-desktop.tar&emsp;&emsp; Source backup TAR file
+    - ```del D:\docker-desktop.tar```
+
+- Go to Docker Desktop:
+    - Settings
+    - Resources (if you find or skip)
+    - Disk Image Location:
+        - Change the path in D drive where you want to store images
+        - Apply & Restart
