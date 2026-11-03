@@ -21,6 +21,3 @@
     - it means interactive
 - **Ctrl + D**
     - for exit the container's cmd
-
-## Port Mapping
-- 
