@@ -19,5 +19,7 @@
 - ```docker exec -it <containerName> bash```
     - its like connect your pc'cmd to the container's cmd
     - it means interactive
+- ```docker exec -it --name <givecontainerName>```
+    - a container is started with the given name
 - **Ctrl + D**
     - for exit the container's cmd
